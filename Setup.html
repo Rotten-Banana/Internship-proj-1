@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Setup</title>
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<nav>
+		<h1>Setup</h1>
+		<h1>Others</h1>
+	</nav>
+	<div class="side_nav">
+		<ul class="nav_list">
+			<li class="nav_item" id="network">Network</li>
+			<li class="nav_item" id="device">Device</li>
+		</ul>
+	</div>
+	
+	<div id="Network" class="content">
+		<div id="Connections" class="top card">
+			<h3>Networks</h3>
+			<div class="refresh">
+				<button class="blue">Refresh</button>	
+			</div>
+			<div class="list">
+				<ul id="Lists">
+					<li>New Newtwork 1</li><p>RSSI</p>
+				</ul>	
+			</div>
+		</div>
+		<div id="Manual" class="bottom card">
+			<h3>Add Manually</h3>
+			<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
+			<input type="Password" id="Password" name="Password" placeholder="Password">
+		</div>
+	</div>
+	<div id="Devices" class="unready hide">
+		<h1>Not Available</h1>
+	</div>
+</body>
+</html>
