@@ -10,36 +10,46 @@
 </head>
 <body>
 	<nav>
-		<h1>Setup</h1>
-		<h1>Others</h1>
+		<h1 id="setup">Setup</h1>
+		<h1 id="others">Others</h1>
+		<h1 id="some">some</h1>
 	</nav>
 	<div class="side_nav">
-		<ul class="nav_list">
+		<ul id="setup_nav" class="nav_list">
 			<li class="nav_item" id="network">Network</li>
 			<li class="nav_item" id="device">Device</li>
 		</ul>
+		<ul id="other_nav" class="nav_list hide">
+			<li class="nav_item">none</li>
+			<li class="nav_item">none</li>
+		</ul>
+		<ul id="some_nav" class="nav_list hide">
+			<li class="nav_item">no</li>
+			<li class="nav_item">no</li>
+		</ul>
 	</div>
-	
-	<div id="Network" class="content">
-		<div id="Connections" class="top card">
-			<h3>Networks</h3>
-			<div class="refresh">
-				<button class="blue">Refresh</button>	
+	<div id="content">
+		<div id="Network" class="content">
+			<div id="Connections" class="card">
+				<h3>Networks</h3>
+				<div class="refresh">
+					<button id="refresh" class="blue">Refresh</button>	
+				</div>
+				<div class="network_list">
+					<ul id="network_list">
+						<li>New Newtwork 1</li><p>RSSI</p>
+					</ul>	
+				</div>
 			</div>
-			<div class="list">
-				<ul id="Lists">
-					<li>New Newtwork 1</li><p>RSSI</p>
-				</ul>	
+			<div id="Manual" class="card">
+				<h3>Add Manually</h3>
+				<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
+				<input type="Password" id="Password" name="Password" placeholder="Password">
 			</div>
 		</div>
-		<div id="Manual" class="bottom card">
-			<h3>Add Manually</h3>
-			<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
-			<input type="Password" id="Password" name="Password" placeholder="Password">
+		<div id="unready_content" class="unready hide">
+			<h1>Not Available</h1>
 		</div>
-	</div>
-	<div id="Devices" class="unready hide">
-		<h1>Not Available</h1>
 	</div>
 </body>
 </html>
