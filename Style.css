@@ -1,6 +1,10 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
 body{
 	margin: 0px 20%;
-	padding: 0px;
 	background-color: #D1D1D1;
 	font-family: 'Public Sans', sans-serif;
 }
@@ -8,6 +12,7 @@ body{
 button{
 	border: none;
 	background-color:transparent;
+	outline: none;
 }
 
 li{
@@ -22,8 +27,7 @@ nav{
 	cursor: pointer;
 }
 
-nav h1{
-	margin: 0px; 
+nav h1{ 
 	padding: 0.5em 0.5em 0.5em 1em;
 	border-right: 2px solid #333333;
 	border-bottom: 2px solid #333333;
@@ -33,7 +37,6 @@ nav h1{
 .nav_list{
 	position: absolute;
 	padding: 5px;
-	margin: 0px;
 	background-color: #F3AA25;
 	line-height: 1.6;
 }
@@ -45,7 +48,7 @@ nav h1{
 	box-shadow: 0 4px 11px 3px rgba(0,0,0,0.2);
 }
 
-h3{
+.card h3{
 	background-color: #1586BE;
 	position: absolute;
   	top: 0;
@@ -62,6 +65,14 @@ h3{
 	box-shadow: 0 4px 11px 3px rgba(0,0,0,0.2);
 	background-color: #A8DADC;
 } 
+
+.panes{
+	display: none;
+}
+
+.active{
+	display: block;
+}
 
 .refresh{
 	position: absolute;
@@ -88,7 +99,32 @@ h3{
 	background-color: #F3AA25;
 }
 
-@media only screen and (max-width: 1313px) {
+.network_list ul{
+	line-height: 1.6;
+}
+
+.network_list li{
+	background-color: #7CAFCF;
+	margin-top: 10%; 
+	padding: 5%;
+}
+
+.card input{
+	margin-top: 10%;
+	margin-left: 10%;
+	margin-right: 5%;
+}
+
+.connect_button{
+	float: right;
+    margin: 10% 20%;
+    padding: 3%;
+    background-color: #1586be99;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 1500px) {
   body {
     margin: 0px 10%;
 	padding: 0px;
@@ -97,15 +133,15 @@ h3{
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
   body {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   body {
-   		margin: 0px;
+   	margin: 0px;
   }
 
   .content{
@@ -114,7 +150,7 @@ h3{
   	position: relative;
   }
   .card{
-  	width: 50%;
+  	width: 70%;
   	margin-right: 0px;
 	} 
 }

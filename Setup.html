@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="Style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="jQuery.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -14,22 +14,14 @@
 		<h1 id="others">Others</h1>
 		<h1 id="some">some</h1>
 	</nav>
-	<div class="side_nav">
-		<ul id="setup_nav" class="nav_list">
-			<li class="nav_item" id="network">Network</li>
-			<li class="nav_item" id="device">Device</li>
-		</ul>
-		<ul id="other_nav" class="nav_list hide">
-			<li class="nav_item">none</li>
-			<li class="nav_item">none</li>
-		</ul>
-		<ul id="some_nav" class="nav_list hide">
-			<li class="nav_item">no</li>
-			<li class="nav_item">no</li>
-		</ul>
-	</div>
-	<div id="content">
-		<div id="Network" class="content">
+	<div id="content" class="setup tabs">
+		<div class="side_nav">	
+			<ul id="setup_nav" class="nav_list">
+				<li class="nav_item" id="network">Network</li>
+				<li class="nav_item" id="device">Device</li>
+			</ul>
+		</div>
+		<div id="Network" class="content panes active">
 			<div id="Connections" class="card">
 				<h3>Networks</h3>
 				<div class="refresh">
@@ -37,18 +29,52 @@
 				</div>
 				<div class="network_list">
 					<ul id="network_list">
-						<li>New Newtwork 1</li><p>RSSI</p>
+						<li>New Newtwork 1 <span style="float: right;">RSSI</span></li>
+						<li>New Newtwork 2	<span style="float: right;">RSSI</span></li>
 					</ul>	
 				</div>
 			</div>
 			<div id="Manual" class="card">
 				<h3>Add Manually</h3>
-				<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
-				<input type="Password" id="Password" name="Password" placeholder="Password">
+				<form>	
+					<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
+					<input type="Password" id="Password" name="Password" placeholder="Password">
+					<button class="connect_button">Connect</button>
+				</form>
 			</div>
 		</div>
-		<div id="unready_content" class="unready hide">
+		<div id="unready_content" class="unready panes">
 			<h1>Not Available</h1>
+		</div>
+	</div>
+
+	<div class="tabs others hide">
+		<div class="side_nav">	
+			<ul id="setup_nav" class="nav_list">
+				<li class="nav_item" id="network">none1</li>
+				<li class="nav_item" id="device">none2</li>
+			</ul>
+		</div>
+		<div id="unready_content" class="unready panes active">
+			<h1>Not Available1</h1>
+		</div>
+		<div id="unready_content" class="unready panes">
+			<h1>Not Available2</h1>
+		</div>
+	</div>
+
+	<div class="tabs some hide">
+		<div class="side_nav">	
+			<ul id="setup_nav" class="nav_list">
+				<li class="nav_item" id="network">none11</li>
+				<li class="nav_item" id="device">none22</li>
+			</ul>
+		</div>
+		<div id="unready_content" class="unready panes active">
+			<h1>Not Available3</h1>
+		</div>
+		<div id="unready_content" class="unready panes">
+			<h1>Not Available4</h1>
 		</div>
 	</div>
 </body>
