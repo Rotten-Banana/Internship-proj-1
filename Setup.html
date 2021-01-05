@@ -24,11 +24,12 @@
 		<div id="Network" class="content panes active">
 			<div id="Connections" class="card">
 				<h3>Networks</h3>
-				<div class="refresh">
-					<button id="refresh" class="blue">Refresh</button>	
-				</div>
-				<div class="network_list">
+				<div class="network_list scroll">
 					<ul id="network_list">
+						<li>New Newtwork 1 <span style="float: right;">RSSI</span></li>
+						<li>New Newtwork 2	<span style="float: right;">RSSI</span></li>
+						<li>New Newtwork 1 <span style="float: right;">RSSI</span></li>
+						<li>New Newtwork 2	<span style="float: right;">RSSI</span></li>
 						<li>New Newtwork 1 <span style="float: right;">RSSI</span></li>
 						<li>New Newtwork 2	<span style="float: right;">RSSI</span></li>
 					</ul>	
@@ -36,7 +37,7 @@
 			</div>
 			<div id="Manual" class="card">
 				<h3>Add Manually</h3>
-				<form>	
+				<form class="input_field">	
 					<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
 					<input type="Password" id="Password" name="Password" placeholder="Password">
 					<button class="connect_button">Connect</button>

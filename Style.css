@@ -59,11 +59,12 @@ nav h1{
 }
 
 .card{
-	position: relative;
-	margin: 2.5% 5em 2.5% 5em;
-	padding: 20% 10%;
-	box-shadow: 0 4px 11px 3px rgba(0,0,0,0.2);
-	background-color: #A8DADC;
+	width: 100%;
+    position: relative;
+    margin: 2.5% 5em 2.5% 0em;
+    padding: 20% 10%;
+    box-shadow: 0 4px 11px 3px rgba(0,0,0,0.2);
+    background-color: #A8DADC
 } 
 
 .panes{
@@ -80,14 +81,9 @@ nav h1{
 	left: 1em;
 }
 
-.refresh button{
-	color: blue;
-}
-
 .side_nav ul li{
 	border-bottom: 2px solid #333333;
 }
-
 
 .hide{
 	display: none;
@@ -109,22 +105,38 @@ nav h1{
 	padding: 5%;
 }
 
-.card input{
-	margin-top: 10%;
-	margin-left: 10%;
-	margin-right: 5%;
-}
-
 .connect_button{
 	float: right;
-    margin: 10% 20%;
+    margin: 3% 40%;
     padding: 3%;
     background-color: #1586be99;
     border-radius: 6px;
     font-size: 15px;
 }
 
-@media only screen and (max-width: 1500px) {
+.scroll{
+	padding: 15px;
+ 	height: 300px;
+ 	overflow: auto;
+}
+
+.input_field input{
+	background: #7CAFCF;
+	width: 80%;
+	padding: 10px;
+	display: block;
+	margin: 5px auto;
+	text-align: center;
+	border: 2px solid #1586be;
+	border-radius: 7px;
+}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1100px) {
   body {
     margin: 0px 10%;
 	padding: 0px;
@@ -133,13 +145,13 @@ nav h1{
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 850px) {
   body {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 650px) {
   body {
    	margin: 0px;
   }
@@ -150,7 +162,15 @@ nav h1{
   	position: relative;
   }
   .card{
-  	width: 70%;
-  	margin-right: 0px;
-	} 
+    width: 102%;
+    margin: 13px 0px 0px 0px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+   	margin: 0px;
+   	overflow: auto;
+   	width:500px;
+  }
 }

@@ -36,8 +36,6 @@ $(document).ready(()=>{
 		// jQuery(this).addClass('active');
 		$('.tabs').hide();
 		$('.tabs').eq(index).show();
-		// $('.tabs').hide();
-		// $('.tabs').eq(index).show();
 		return false
 	});
 })
