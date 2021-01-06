@@ -38,4 +38,37 @@ $(document).ready(()=>{
 		$('.tabs').eq(index).show();
 		return false
 	});
-})
+
+	const network_fetch = $(()=>{
+		var list = $('ul#network_list')
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:3000',
+			success: (data)=>{
+				$.each(data, (i,dat)=>{
+					list.append(`<li class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
+				});
+			},
+			error: (error)=>{
+				console.log('error',error);
+			}
+		})
+	});
+
+	setInterval(()=>{
+		var list = $('ul#network_list')
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost:3000',
+			success: (data)=>{
+				$("li").remove('.remove');
+				$.each(data, (i,dat)=>{
+					list.append(`<li class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
+				});
+			},
+			error: (error)=>{
+				console.log('error',error);
+			}
+		});
+	},3000)
+});
