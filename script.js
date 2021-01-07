@@ -1,7 +1,4 @@
 $(document).ready(()=>{
-	$("button#refresh").click(()=>{
-		console.log("click");
-	})
 
 	$('.nav_list li').click(function(){
 		var index = $(this).index();
@@ -38,15 +35,16 @@ $(document).ready(()=>{
 		$('.tabs').eq(index).show();
 		return false
 	});
-
-	const network_fetch = $(()=>{
+	
+	
+	$(()=>{
 		var list = $('ul#network_list')
 		$.ajax({
 			type: 'GET',
 			url: 'http://localhost:3000',
 			success: (data)=>{
 				$.each(data, (i,dat)=>{
-					list.append(`<li class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
+					list.append(`<li id="network_element" class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
 				});
 			},
 			error: (error)=>{
@@ -57,18 +55,30 @@ $(document).ready(()=>{
 
 	setInterval(()=>{
 		var list = $('ul#network_list')
-		$.ajax({
-			type: 'GET',
-			url: 'http://localhost:3000',
-			success: (data)=>{
-				$("li").remove('.remove');
-				$.each(data, (i,dat)=>{
-					list.append(`<li class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
-				});
-			},
-			error: (error)=>{
-				console.log('error',error);
-			}
-		});
+		var flag1 = $('.setup').css("display")
+		var flag2 = $('#Network').css("display")
+		if(flag1==='block' && flag2==='block'){
+			$.ajax({
+				type: 'GET',
+				url: 'http://localhost:3000',
+				success: (data)=>{
+					$("li").remove('.remove');
+					$.each(data, (i,dat)=>{
+						list.append(`<li id="network_element" class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
+					});
+				},
+				error: (error)=>{
+					console.log('error',error);
+				}
+			});
+		}
 	},3000)
+
+	$(document).on('click','li#network_element',()=>{
+		console.log("click");
+		// var a = $(this).text();
+		// console.log(a);
+
+	})
+	
 });

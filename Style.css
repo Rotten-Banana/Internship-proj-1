@@ -103,6 +103,8 @@ nav h1{
 	background-color: #7CAFCF;
 	margin-top: 10%; 
 	padding: 5%;
+	border: 2px solid #1586be;
+    border-radius: 7px;
 }
 
 .connect_button{
