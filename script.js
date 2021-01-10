@@ -2,8 +2,6 @@ $(document).ready(()=>{
 
 	$('.nav_list li').click(function(){
 		var index = $(this).index();
-		// jQuery('.tabs-menu li').removeClass('active');
-		// jQuery(this).addClass('active');
 		$('.setup .panes').hide();
 		$('.setup .panes').eq(index).show();
 		return false
@@ -11,8 +9,6 @@ $(document).ready(()=>{
 
 	$('.nav_list li').click(function(){
 		var index = $(this).index();
-		// jQuery('.tabs-menu li').removeClass('active');
-		// jQuery(this).addClass('active');
 		$('.others .panes').hide();
 		$('.others .panes').eq(index).show();
 		return false
@@ -20,8 +16,6 @@ $(document).ready(()=>{
 
 	$('.nav_list li').click(function(){
 		var index = $(this).index();
-		// jQuery('.tabs-menu li').removeClass('active');
-		// jQuery(this).addClass('active');
 		$('.some .panes').hide();
 		$('.some .panes').eq(index).show();
 		return false
@@ -29,8 +23,6 @@ $(document).ready(()=>{
 
 	$('nav h1').click(function(){
 		var index = $(this).index();
-		// jQuery('.tabs-menu li').removeClass('active');
-		// jQuery(this).addClass('active');
 		$('.tabs').hide();
 		$('.tabs').eq(index).show();
 		return false
@@ -44,7 +36,7 @@ $(document).ready(()=>{
 			url: 'http://localhost:3000',
 			success: (data)=>{
 				$.each(data, (i,dat)=>{
-					list.append(`<li id="network_element" class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
+					list.append(`<li onclick="test(this)" id="network_element" class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
 				});
 			},
 			error: (error)=>{
@@ -64,7 +56,7 @@ $(document).ready(()=>{
 				success: (data)=>{
 					$("li").remove('.remove');
 					$.each(data, (i,dat)=>{
-						list.append(`<li id="network_element" class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
+						list.append(`<li onclick="test(this)" id="network_element" class="remove">${dat.SSID} <span style="float: right;">${dat.RSSI}</span></li>`);
 					});
 				},
 				error: (error)=>{
@@ -74,11 +66,24 @@ $(document).ready(()=>{
 		}
 	},3000)
 
-	$(document).on('click','li#network_element',()=>{
-		console.log("click");
-		// var a = $(this).text();
-		// console.log(a);
+	// $(document).on('click','#network_list li',()=>{
+	// 	console.log("click");
+	// 	console.log($(this).text());
 
-	})
+	// })
 	
+	// function test(a){
+	// 	console.log(a.innerHTML)
+	// }
+
+	$("input#Password").on('keypress',function(e) {
+		if(e.which == 13) {
+			$("form#SSID_Pass").submit();
+		}
+	});
+
+	$("form#submit").click(()=>{
+		$("form#SSID_Pass").submit();
+	})
+
 });

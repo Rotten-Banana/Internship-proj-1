@@ -30,10 +30,10 @@
 			</div>
 			<div id="Manual" class="card">
 				<h3>Add Manually</h3>
-				<form class="input_field">	
-					<input type="SSID" id="SSID" name="SSID" placeholder="SSID">
-					<input type="Password" id="Password" name="Password" placeholder="Password">
-					<button class="connect_button">Connect</button>
+				<form action="http://localhost:3000" method="POST" id="SSID_Pass" class="input_field">	
+					<input type="SSID" id="SSID" name="SSID" placeholder="SSID" required/>
+					<input type="Password" id="Password" name="Password" placeholder="Password" required/>
+					<button id="submit" class="connect_button">Connect</button>
 				</form>
 			</div>
 		</div>
@@ -71,5 +71,13 @@
 			<h1>Not Available4</h1>
 		</div>
 	</div>
+	<script>
+		function test(a){
+		var myString = a.innerHTML;
+		var firstWord = myString.split(" ");
+		$("#SSID").attr("value", firstWord[0]);
+		$("input#Password").focus();
+	}
+	</script>
 </body>
 </html>

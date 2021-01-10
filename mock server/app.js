@@ -31,7 +31,21 @@ const server = http.createServer(function(req,res){
 				'RSSI':`${Math.floor((Math.random()*100))}`
 			}
 		];
-	res.end(JSON.stringify(obj));
+
+		if (req.method === 'POST'){
+			let body = '';
+			req.on('data', chunk => {
+				body += chunk.toString(); // convert Buffer to string
+			});
+			req.on('end', () => {
+				res.end(body);
+			});
+		}
+		else{
+			res.end(JSON.stringify(obj));
+		}
+
+	
 });
 
 server.listen(port, function(error){
