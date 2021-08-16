@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Setup</title>
-	<link rel="stylesheet" type="text/css" href="Style.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap" rel="stylesheet">
-	<script src="jQuery.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-	<nav>
-		<h1 id="setup">Setup</h1>
-		<h1 id="others">Others</h1>
-		<h1 id="some">some</h1>
-	</nav>
-	<div id="content" class="setup tabs">
-		<div class="side_nav">	
-			<ul id="setup_nav" class="nav_list">
-				<li class="nav_item" id="network">Network</li>
-				<li class="nav_item" id="device">Device</li>
-			</ul>
-		</div>
-		<div id="Network" class="content panes active">
-			<div id="Connections" class="card">
-				<h3>Networks</h3>
-				<div class="network_list scroll">
-					<ul id="network_list"></ul>	
-				</div>
-			</div>
-			<div id="Manual" class="card">
-				<h3>Add Manually</h3>
-				<form action="http://localhost:3000" method="POST" id="SSID_Pass" class="input_field">	
-					<input type="SSID" id="SSID" name="SSID" placeholder="SSID" required/>
-					<input type="Password" id="Password" name="Password" placeholder="Password" required/>
-					<button id="submit" class="connect_button">Connect</button>
-				</form>
-			</div>
-		</div>
-		<div id="unready_content" class="unready panes">
-			<h1>Not Available</h1>
-		</div>
-	</div>
+  <head>
+    <title>Setup</title>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="jQuery.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <h1 id="setup">Setup</h1>
+      <h1 id="others">Others</h1>
+      <h1 id="some">some</h1>
+    </nav>
+    <div id="content" class="setup tabs">
+      <div class="side_nav">
+        <ul id="setup_nav" class="nav_list">
+          <li class="nav_item" id="network">Network</li>
+          <li class="nav_item" id="device">Device</li>
+        </ul>
+      </div>
+      <div id="Network" class="content panes active">
+        <div id="Connections" class="card">
+          <h3>Networks</h3>
+          <div class="network_list scroll">
+            <ul id="network_list"></ul>
+          </div>
+        </div>
+        <div id="Manual" class="card">
+          <h3>Add Manually</h3>
+          <form
+            action="http://localhost:3000"
+            method="POST"
+            id="SSID_Pass"
+            class="input_field"
+          >
+            <input
+              type="SSID"
+              id="SSID"
+              name="SSID"
+              placeholder="SSID"
+              required
+            />
+            <input
+              type="Password"
+              id="Password"
+              name="Password"
+              placeholder="Password"
+              required
+            />
+            <button id="submit" class="connect_button">Connect</button>
+          </form>
+        </div>
+      </div>
+      <div id="unready_content" class="unready panes">
+        <h1>Not Available</h1>
+      </div>
+    </div>
 
-	<div class="tabs others hide">
-		<div class="side_nav">	
-			<ul id="setup_nav" class="nav_list">
-				<li class="nav_item" id="network">none1</li>
-				<li class="nav_item" id="device">none2</li>
-			</ul>
-		</div>
-		<div id="unready_content" class="unready panes active">
-			<h1>Not Available1</h1>
-		</div>
-		<div id="unready_content" class="unready panes">
-			<h1>Not Available2</h1>
-		</div>
-	</div>
+    <div class="tabs others hide">
+      <div class="side_nav">
+        <ul id="setup_nav" class="nav_list">
+          <li class="nav_item" id="network">none1</li>
+          <li class="nav_item" id="device">none2</li>
+        </ul>
+      </div>
+      <div id="unready_content" class="unready panes active">
+        <h1>Not Available1</h1>
+      </div>
+      <div id="unready_content" class="unready panes">
+        <h1>Not Available2</h1>
+      </div>
+    </div>
 
-	<div class="tabs some hide">
-		<div class="side_nav">	
-			<ul id="setup_nav" class="nav_list">
-				<li class="nav_item" id="network">none11</li>
-				<li class="nav_item" id="device">none22</li>
-			</ul>
-		</div>
-		<div id="unready_content" class="unready panes active">
-			<h1>Not Available3</h1>
-		</div>
-		<div id="unready_content" class="unready panes">
-			<h1>Not Available4</h1>
-		</div>
-	</div>
-	<script>
-		function test(a){
-		var myString = a.innerHTML;
-		var firstWord = myString.split(" ");
-		$("#SSID").attr("value", firstWord[0]);
-		$("input#Password").focus();
-	}
-	</script>
-</body>
+    <div class="tabs some hide">
+      <div class="side_nav">
+        <ul id="setup_nav" class="nav_list">
+          <li class="nav_item" id="network">none11</li>
+          <li class="nav_item" id="device">none22</li>
+        </ul>
+      </div>
+      <div id="unready_content" class="unready panes active">
+        <h1>Not Available3</h1>
+      </div>
+      <div id="unready_content" class="unready panes">
+        <h1>Not Available4</h1>
+      </div>
+    </div>
+    <script>
+      function test(a) {
+        var myString = a.innerHTML;
+        var firstWord = myString.split(" ");
+        $("#SSID").attr("value", firstWord[0]);
+        $("input#Password").focus();
+      }
+    </script>
+  </body>
 </html>
